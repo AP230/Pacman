@@ -21,26 +21,6 @@ class Boundary {
         c.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
 }
-
-  class Player {
-    constructor({
-    position,
-    velocity
-    }) {
-        this.position = this.position
-        this.velocity = this.velocity
-        this.radius = 10
-    }
-
-    draw() {
-        c.beginPath()
-        c.arc(this.position.x, this.position.y, this.radius, 0, 
-            Math.PI * 2)
-            c.fillStyle = 'yellow'
-            c.closePath()
-    }
-    }
-
 const map = [
     ['-', '-', '-', '-', '-', '-'],
     ['-', ' ', ' ', ' ', ' ', '-'],
@@ -50,16 +30,6 @@ const map = [
 ]
 
 const boundaries = [];
-const player = new Player ({
-    position: {
-        x: Boundary.width + Boundary.width /2,
-        y: Boundary.height + Boundary.height /2
-    },
-    velocity: {
-        x: 0,
-        y: 0
-    }
-})
 
 map.forEach((row, i) => {
     row.forEach((symbol, j) => {
@@ -82,5 +52,3 @@ map.forEach((row, i) => {
 boundaries.forEach((boundary) => {
     boundary.draw()
 })
-
-player.draw()
